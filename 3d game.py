@@ -1,12 +1,12 @@
 from init import *
-app = Ursina(title='Python Game!', vsync=False, )
+app = Ursina(title='Python Game!', vsync=True, editor_ui_enabled=True,  development_mode=True)
 window.fullscreen = True
 
 block = 3
 BLOCK_TEXTURES = [3, 3, 3, 3, 3, 4]
 BLOCK_TEXTURES_2 = [4, 4, 4, 4, 4, 5]
 
-light = DirectionalLight(shadows=False)
+light = DirectionalLight(shadows=True)
 light.look_at(Vec3(1, -1, 1))
 light.color = color.light_gray
 block_list = []
