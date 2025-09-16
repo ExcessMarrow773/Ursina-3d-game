@@ -35,10 +35,10 @@ class Voxel(Button):
 
 for z in range(15):
     for x in range(15):
-        if random.randrange(50) == 4:
-            block = 1
-            for y in range(6, 9):
-                Voxel(position=(x, y, z))
+        # if random.randrange(50) == 4:
+        #     block = 1
+        #     for y in range(6, 9):
+        #         Voxel(position=(x, y, z))
         block = random.choice(BLOCK_TEXTURES)
         Voxel(position=(x, 5, z))
         block = random.choice(BLOCK_TEXTURES_2)
