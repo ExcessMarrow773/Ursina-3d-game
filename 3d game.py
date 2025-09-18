@@ -93,10 +93,6 @@ def input(key):
         player.x_setter(15 // 2)
         player.y_setter(10)
         player.z_setter(15 // 2)
-    if key == 'g':
-        f = open("saveFile.txt", "w")
-        f.write(str(block_list))
-        f.close()
 
 
 app.run()
