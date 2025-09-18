@@ -1,16 +1,17 @@
 from init import *
-app = Ursina(title='Python Game!', vsync=True, editor_ui_enabled=True,  development_mode=True)
+app = Ursina(title='Python Game!', vsync=True, editor_ui_enabled=True,  development_mode=True, show_ursina_splash=True)
 window.fullscreen = True
+window.borderless = True
 
 Sky()
 
 block = 3
-BLOCK_TEXTURES = [3, 3, 3, 3, 3, 4]
+BLOCK_TEXTURES = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4]
 BLOCK_TEXTURES_2 = [4, 4, 4, 4, 4, 5]
 
 light = DirectionalLight()
 light.look_at(Vec3(1, -1, 1))
-light.color = color.light_gray
+light.color = color.white
 light.shadows=True
 block_list = []
 
@@ -93,6 +94,10 @@ def input(key):
         player.x_setter(15 // 2)
         player.y_setter(10)
         player.z_setter(15 // 2)
+    
+    if key == 'z':
+        application.pause()
+        mouse.locked = not mouse.locked
 
 
 app.run()
