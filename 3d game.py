@@ -6,9 +6,10 @@ block = 3
 BLOCK_TEXTURES = [3, 3, 3, 3, 3, 4]
 BLOCK_TEXTURES_2 = [4, 4, 4, 4, 4, 5]
 
-light = DirectionalLight(shadows=True)
+light = DirectionalLight()
 light.look_at(Vec3(1, -1, 1))
 light.color = color.light_gray
+light.shadows=True
 block_list = []
 
 class Voxel(Button):
