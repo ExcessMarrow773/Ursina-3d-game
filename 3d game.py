@@ -2,6 +2,8 @@ from init import *
 app = Ursina(title='Python Game!', vsync=True, editor_ui_enabled=True,  development_mode=True)
 window.fullscreen = True
 
+Sky()
+
 block = 3
 BLOCK_TEXTURES = [3, 3, 3, 3, 3, 4]
 BLOCK_TEXTURES_2 = [4, 4, 4, 4, 4, 5]
@@ -95,4 +97,6 @@ def input(key):
         f = open("saveFile.txt", "w")
         f.write(str(block_list))
         f.close()
+
+
 app.run()
