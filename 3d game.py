@@ -1,5 +1,5 @@
 from init import *
-app = Ursina(title='Python Game!', vsync=True, editor_ui_enabled=True,  development_mode=True, show_ursina_splash=True)
+app = Ursina(title='Python Game!', show_ursina_splash=True, editor_ui_enabled=True, development_mode=True, vsync=True)
 window.fullscreen = True
 window.borderless = True
 
@@ -7,7 +7,7 @@ Sky()
 
 block = 3
 BLOCK_TEXTURES = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4]
-BLOCK_TEXTURES_2 = [4, 4, 4, 4, 4, 5]
+BLOCK_TEXTURES_2 = [4, 5, 5, 5, 5, 5]
 
 light = DirectionalLight()
 light.look_at(Vec3(1, -1, 1))
@@ -37,18 +37,18 @@ class Voxel(Button):
         block_list.append(data)
 
 
-for z in range(15):
-    for x in range(15):
-        # if random.randrange(50) == 4:
-        #     block = 1
-        #     for y in range(6, 9):
-        #         Voxel(position=(x, y, z))
+for z in range(30):
+    for x in range(30):
+        if random.randrange(75) == 1:
+            block = 1
+            # for y in range(6, 9):
+            Voxel(position=(x, 6, z))
         block = random.choice(BLOCK_TEXTURES)
         Voxel(position=(x, 5, z))
         block = random.choice(BLOCK_TEXTURES_2)
         Voxel(position=(x, 4, z))
-        block = 5
-        Voxel(position=(x, 3, z))
+        # block = 5
+        # Voxel(position=(x, 3, z))
 
 uiParts = uiStart(block, lit_with_shadows_shader)
 arm = uiParts[3]
